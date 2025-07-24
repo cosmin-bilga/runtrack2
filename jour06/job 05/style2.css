@@ -1,6 +1,14 @@
 body
 {
     background-color: yellow;
+    display:flex;
+    justify-content: center;
+}
+
+form{
+    padding: 40px;
+    border-radius: 20px;
+    background-color: gray;
 }
 
 select

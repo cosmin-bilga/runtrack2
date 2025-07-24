@@ -26,7 +26,7 @@
         $largeur = intval($_POST["largeur"]);
     }
 
-    if ($largeur and $hauteur and $largeur >= 1 and $hauteur >= 1) {
+    if (isset($largeur) and isset($hauteur) and $largeur >= 1 and $hauteur >= 1) {
         // Toit de maison
 
         for ($i = 0; $i < $hauteur; $i += 1) {
@@ -78,18 +78,18 @@
 
     $sizefactor = 10;
 
-    $hauteur *= $sizefactor;
-    $largeur *= $sizefactor;
-    $midpoint = $largeur / 2;
+    if (isset($largeur) and isset($hauteur)) {
+        $hauteur *= $sizefactor;
+        $largeur *= $sizefactor;
+        $midpoint = $largeur / 2;
 
-    echo "<p> Version SVG </p><br /><br />";
+        echo "<p> Version SVG </p><br /><br />";
 
-    echo "<svg height=\"400\" width=\"500\" xmlns=\"http://www.w3.org/2000/svg\" style=\"margin: 5vw;\">
+        echo "<svg height=\"400\" width=\"500\" xmlns=\"http://www.w3.org/2000/svg\" style=\"margin: 5vw;\">
          <path d=\"M$largeur $hauteur L$midpoint 0 L0 $hauteur L$largeur $hauteur L$largeur " . $hauteur * 2 . "L0 " . $hauteur * 2 . "L0 $hauteur Z\" style=\"fill:none;stroke:black;stroke-width:3\" />
             Sorry, your browser does not support inline SVG.
-        </svg>"
-
-
+        </svg>";
+    }
     ?>
 
 </body>
