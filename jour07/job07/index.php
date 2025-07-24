@@ -37,7 +37,7 @@
         {
             $str = explode(" ", $str);
             for ($i = 0; $i < count($str); $i += 1) {
-                if (ctype_upper($str[$i][0]))
+                if (strlen($str[$i]) > 0 and ctype_upper($str[$i][0]))
                     $str[$i] = "<b>" . $str[$i] . "</b>";
             }
 
