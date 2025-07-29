@@ -1,6 +1,6 @@
 SELECT
-    nom,
     prenom,
+    nom,
     naissance
 FROM
     etudiants
